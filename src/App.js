@@ -1,5 +1,9 @@
 import './App.css';
 import SimpsonsComponent from "./Components/simpsons/SimpsonsComponent";
+import {useEffect, useState} from "react";
+import {getCharacters} from "./Services/characters.service";
+import CharactersComponent from "./Components/characters/charactersComponent";
+import './Components/character/character.css'
 
 let simpsons = [
     {
@@ -40,9 +44,17 @@ let simpsons = [
 ];
 
 function App() {
+    let [characters, setCharacters] = useState([]);
+    useEffect(() => {
+        //getCharacters().then(value => setCharacters(value.data))
+        getCharacters().then(response => {
+            const results = response.data.results.slice(0, 6);
+            setCharacters(results)
+    })},[])
     return (
         <div className="App">
             < SimpsonsComponent array={simpsons} />
+            <CharactersComponent characters={characters}/>
         </div>
     );
 }
