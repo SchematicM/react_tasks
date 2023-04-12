@@ -14,7 +14,7 @@ const PostComponent = ({ post }) => {
                 {post.id}. Title: {post.title}
             </h3>
             <button onClick={toggleDetails}>
-                {showDetails ? "Hide Details" : "Details"}
+                {showDetails ? "Hide Details" : "Show Details"}
             </button>
             {showDetails && <PostDetailsComponent details={post} />}
         </div>
