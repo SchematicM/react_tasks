@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {getUserPosts} from "../../services/jsonplaceholder.service";
+import './user.css'
 
 const UserComponent = ({user, toggleDetails}) => {
     const [userPosts, setUserPosts] = useState([]);
     const [showDetails, setShowDetails] = useState(false);
 
     const showPosts = ()=>setShowDetails(!showDetails);
+
 
     useEffect(() => {
         getUserPosts(user.id).then(response => setUserPosts(response.data));
@@ -20,9 +22,8 @@ const UserComponent = ({user, toggleDetails}) => {
             <button onClick={() => {
                 showPosts();
                 toggleDetails(user);
-
             }}>
-                Show Posts
+              <a href={'#user-posts'}  >Show Posts</a>
             </button>
         </div>
     )

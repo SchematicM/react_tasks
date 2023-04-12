@@ -1,0 +1,22 @@
+.user{
+    padding: 10px;
+    width: 20vw;
+    min-width: 210px;
+    border-style: outset;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+p {
+    margin: 2px;
+}
+h3{
+    margin-bottom: 2px;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}

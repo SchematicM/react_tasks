@@ -1,0 +1,13 @@
+.launch{
+    width: 18vw;
+    min-width: 250px;
+    border-style: outset;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+img{
+    width: 10vw;
+    margin: 5px;
+}

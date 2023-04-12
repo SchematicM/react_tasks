@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import PostComponent from "../post/PostComponent";
 import {getPosts} from "../../services/jsonplaceholder.service";
+import './posts.css'
 
 const PostsComponent = () => {
     let [posts, setPosts] = useState([]);
@@ -11,8 +12,9 @@ const PostsComponent = () => {
         })
     }, [])
     return (
-        <div className="posts">
+        <div className="posts-task">
             <h1>Posts</h1>
+            <div className={'posts'}>
             {
                 posts.map((item) =>(
                     <PostComponent
@@ -20,6 +22,7 @@ const PostsComponent = () => {
                         post = {item}
                     />))
             }
+            </div>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {getUsers} from "../../services/jsonplaceholder.service";
 import UserComponent from "../user/UserComponent";
+import './users.css'
 
 const UsersComponent = ({toggleDetails}) => {
     let [users, setUsers] = useState([]);
@@ -11,8 +12,9 @@ const UsersComponent = ({toggleDetails}) => {
     }, [])
 
     return (
-        <div className="posts">
+        <div className="users-task">
             <h1>Users</h1>
+            <div className={'users'}>
             {
                 users.map((user) =>(
                     <UserComponent
@@ -21,6 +23,7 @@ const UsersComponent = ({toggleDetails}) => {
                         toggleDetails ={toggleDetails}
                     />))
             }
+            </div>
         </div>
     );
 };

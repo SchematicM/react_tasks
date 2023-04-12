@@ -19,7 +19,8 @@ function App() {
                 <UsersComponent toggleDetails={toggleDetails} />
                 {
                     user && (
-                        <div className={'user-posts'} >
+
+                        <div id={'user-posts'} >
                             {
                                 user.posts.map(post => (<PostComponent post = {post} key = {post.id}/>))
                             }

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import PostDetailsComponent from "./PostDetailsComponent";
+import './post.css'
 
 const PostComponent = ({ post }) => {
     const [showDetails, setShowDetails] = useState(false);

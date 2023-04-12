@@ -1,0 +1,19 @@
+.post{
+    padding: 10px;
+    width: 17vw;
+    min-width: 140px;
+    border-style: outset;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+button{
+    width: 120px;
+    border-radius: 5px;
+}
+.post>.post{
+    border-style: none;
+}

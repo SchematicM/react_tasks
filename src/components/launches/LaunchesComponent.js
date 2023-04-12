@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import LaunchComponent from "../launch/LaunchComponent";
 import {getLaunches} from "../../services/spase.service";
-
+import './launches.css'
 const LaunchesComponent = () => {
     let [launches, setLaunches] = useState([]);
     useEffect(() => {
@@ -13,6 +13,7 @@ const LaunchesComponent = () => {
     return (
         <div className="spaceX">
             <h1>Missions</h1>
+            <div className={'launches'}>
             {
                 launches.map((item,index) =>(
                     <LaunchComponent
@@ -20,6 +21,7 @@ const LaunchesComponent = () => {
                         item = {item}
                     />))
             }
+                </div>
         </div>
     );
 };
