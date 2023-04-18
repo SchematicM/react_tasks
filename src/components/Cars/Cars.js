@@ -14,7 +14,7 @@ const Cars = () => {
 
     return (
         <div>
-            <CarForm setAllCars={setAllCars} carForUpdate={carForUpdate}/>
+            <CarForm setAllCars={setAllCars} carForUpdate={carForUpdate} setCarForUpdate = {serCarForUpdate}/>
             <hr/>
             {cars.map(car=><Car key={car.id} car={car} serCarForUpdate={serCarForUpdate} setAllCars = {setAllCars}/>)}
         </div>

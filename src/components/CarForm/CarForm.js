@@ -4,7 +4,7 @@ import {useEffect} from "react";
 import {joiResolver} from '@hookform/resolvers/joi';
 import {carValidator} from "../../validators/car.validator";
 
-const CarForm = ({setAllCars, carForUpdate}) => {
+const CarForm = ({setAllCars, carForUpdate, setCarForUpdate}) => {
     const {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm({
         mode: 'all',
         resolver: joiResolver(carValidator)
@@ -27,6 +27,7 @@ const CarForm = ({setAllCars, carForUpdate}) => {
     const update = async (car) => {
         await carService.updateById(carForUpdate.id, car);
         setAllCars(prev => !prev)
+        setCarForUpdate(null)
         reset()
     }
 
