@@ -5,8 +5,8 @@ import {joiResolver} from "@hookform/resolvers/joi";
 import {userValidator} from "../validators/user.validator";
 
 const UserFormComponent = ({lift}) => {
-    const {register, handleSubmit, reset, formState:{errors, isValid}} = useForm({
-        mode: "all",
+    const {register, handleSubmit, reset, formState:{errors}} = useForm({
+        mode: "onSubmit",
         resolver:joiResolver(userValidator)
     });
     const add = async (user) => {
@@ -16,6 +16,7 @@ const UserFormComponent = ({lift}) => {
     }
     return (
             <form onSubmit={handleSubmit(add)}>
+                <h3>Add new User</h3>
                 <input type="text" placeholder={'name'} {...register('name')}/>
                 {errors.name && <span>{errors.name.message}</span>}
                 <input type="text" placeholder={'username'} {...register('username')}/>
@@ -25,7 +26,7 @@ const UserFormComponent = ({lift}) => {
                 <input type="text" placeholder={'phone'} {...register('phone')}/>
                 {errors.phone && <span>{errors.phone.message}</span>}
 
-                <button disabled={!isValid}>Add</button>
+                <button>Add</button>
             </form>
     );
 };
