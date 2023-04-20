@@ -14,6 +14,7 @@ const PostComponent = () => {
             <h3> Post: </h3>
             <h4>Title: {post.title}</h4>
             <p>Body : {post.body}</p>
+            <hr/>
         </div>
     );
 };
