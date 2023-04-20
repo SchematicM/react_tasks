@@ -1,0 +1,21 @@
+body, head{
+    margin: 0;
+    padding: 0;
+}
+.App{
+    margin: 10px;
+}
+li {
+    width: 10vw;
+    list-style: none;
+
+}
+
+ul {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-style: solid;
+    border-color: darkgrey;
+}
