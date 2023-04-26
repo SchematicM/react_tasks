@@ -1,4 +1,5 @@
 import React from 'react';
+import image from './images/CatDog.jpg'
 
 const HomePage = () => {
     return (
@@ -14,7 +15,7 @@ const HomePage = () => {
                 <li>
                     Використовуючи хук useReducer в якому початковый стейт буде cats: [], dogs:[]
                     Реалізвути збереження окремо нового кота, та окремо собаку (приклад на зображенні)
-                    <img src={'img.png'} alt ="mocup of task"/>
+                    <img src={image} width={'90%'} alt ="mockup of task"/>
                 </li>
                 <li>
                     Advanced
