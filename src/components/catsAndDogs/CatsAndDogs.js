@@ -6,8 +6,19 @@ function reducer(state, action) {
             return {...state, cats: [...state.cats, action.payload]};
         case "ADD_DOG":
             return {...state, dogs: [...state.dogs, action.payload]};
+        case 'DELETE_CAT':
+            return {
+                ...state,
+                cats: state.cats.filter((cat, index) => index !== action.payload),
+            };
+        case 'DELETE_DOG':
+            return {
+                ...state,
+                dogs: state.dogs.filter((dog, index) => index !== action.payload),
+            };
         default:
             return state;
+
     }
 }
 
@@ -28,6 +39,14 @@ function CatsAndDogs() {
         dispatch({type: 'ADD_DOG', payload: {name: dogName}});
         e.target.reset();
     };
+    const handleDeleteCat = (index) => {
+        dispatch({ type: 'DELETE_CAT', payload: index });
+    };
+
+    const handleDeleteDog = (index) => {
+        dispatch({ type: 'DELETE_DOG', payload: index });
+    };
+
 
     return (
         <div>
@@ -44,22 +63,25 @@ function CatsAndDogs() {
             <div>
                 <h2>Cats:</h2>
                 <ul>
-                    {state.cats.map((cat) => (
-                        <li key={cat.name}>{cat.name}</li>
-                    ))}
+                    {state.cats.map((cat,index) => (
+                        <li key={index}>
+                            {cat.name}
+                            <button onClick={() => handleDeleteCat(index)}>Delete</button>
+                        </li>                    ))}
                 </ul>
             </div>
             <div>
                 <h2>Dogs:</h2>
                 <ul>
-                    {state.dogs.map((dog) => (
-                        <li key={dog.name}>{dog.name}</li>
-                    ))}
+                    {state.dogs.map((dog, index) => (
+                        <li key={index}>
+                            {dog.name}
+                            <button onClick={() => handleDeleteDog(index)}>Delete</button>
+                        </li>                    ))}
                 </ul>
             </div>
         </div>
     );
-
 }
 
 export default CatsAndDogs;
