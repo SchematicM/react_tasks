@@ -1,10 +1,10 @@
 import './App.css';
 import {Link, Route, Routes} from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
-import PostsComponent from "./components/posts/PostsComponent";
-import CommentsComponent from "./components/comments/CommentsComponent";
+import PostsPage from "./pages/posts/PostsPage";
+import CommentsPage from "./pages/comments/CommentsPage";
 import React from "react";
-import CatsAndDogs from "./components/catsAndDogs/CatsAndDogs";
+import CatsAndDogsPage from "./pages/catsAndDogs/CatsAndDogsPage";
 
 function App() {
    return( <div className="App">
@@ -21,9 +21,9 @@ function App() {
         <div className={'content'}>
             <Routes>
                 <Route path={'/'} element={<HomePage/>}/>
-                <Route path={'/posts'} element={<PostsComponent/>}/>
-                <Route path={'/comments'} element={<CommentsComponent/>}/>
-                <Route path={'/cats-dogs'} element={<CatsAndDogs/>}/>
+                <Route path={'/posts'} element={<PostsPage/>}/>
+                <Route path={'/comments'} element={<CommentsPage/>}/>
+                <Route path={'/cats-dogs'} element={<CatsAndDogsPage/>}/>
             </Routes>
         </div>
 

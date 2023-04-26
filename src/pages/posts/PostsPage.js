@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import PostComponent from "../post/PostComponent";
+import PostComponent from "../../components/post/PostComponent";
 import typicodeService from "../../services/typicode.service";
 import {Outlet} from "react-router-dom";
 
-class PostsComponent extends Component {
+class PostsPage extends Component {
     state = {
         posts: [],
     };
@@ -31,4 +31,4 @@ class PostsComponent extends Component {
     }
 }
 
-export default PostsComponent;
+export default PostsPage;

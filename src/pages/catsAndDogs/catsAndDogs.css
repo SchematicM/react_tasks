@@ -1,0 +1,15 @@
+.forms, .animals {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+hr {
+    margin: 10px;
+}
+
+.animals > div {
+    width: 40vw;
+    text-align: left;
+}

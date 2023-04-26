@@ -1,8 +1,8 @@
 import React from "react";
-import CommentComponent from "../comment/CommentComponent";
+import CommentComponent from "../../components/comment/CommentComponent";
 import typicodeService from "../../services/typicode.service";
 
-class CommentsComponent extends React.Component {
+class CommentsPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -35,4 +35,4 @@ class CommentsComponent extends React.Component {
         );
     }
 }
-export default CommentsComponent;
+export default CommentsPage;
